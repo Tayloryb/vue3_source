@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vueuse/core": "^10.9.0",
     "ant-design-vue": "4.x",
     "crypto-js": "^4.2.0",
     "lodash-es": "^4.17.21",

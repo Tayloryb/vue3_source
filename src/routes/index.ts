@@ -20,6 +20,11 @@ const routes = [
     path: '/clipboard',
     name: 'Clipboard',
     component: () => import('@/views/Clipboard.vue')
+  },
+  {
+    path: '/list',
+    name: 'List',
+    component: () => import('@/views/list/List.vue')
   }
 ]
 
