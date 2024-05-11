@@ -33,8 +33,8 @@ class AesEncryption implements Encryption {
 
   get getOptions() {
     return {
-      mode: CTR, // 加密部分不赘余，自行搜索参数学习
-      padding: pkcs7, // 加密部分不赘余，自行搜索参数学习
+      mode: CTR,
+      padding: pkcs7,
       iv: this.iv,
     };
   }
@@ -66,7 +66,7 @@ export const createSmartStorage = ({
   key = cacheConfig.key, // 修改为自己项目cacheConfig中的key
   iv = cacheConfig.iv, // 修改为自己项目cacheConfig中的iv
   timeout = null,
-  hasEncrypt = true,
+  hasEncrypt = true, // 是否需要加密
 }: Partial<CreateSmartStorageParams> = {}) => {
   if (hasEncrypt && [key.length, iv.length].some((item) => item !== 16)) {
     throw new Error('When hasEncrypt is true, the key or iv must be 16 bits!');

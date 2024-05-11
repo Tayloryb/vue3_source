@@ -25,6 +25,15 @@ const routes = [
     path: '/list',
     name: 'List',
     component: () => import('@/views/list/List.vue')
+  },
+  {
+    path: '/socket',
+    name: 'Socket',
+    component: () => import('@/views/Socket.vue')
+  }, {
+    path: '/apitest',
+    name: 'Apitest',
+    component: () => import('@/views/Apitest.vue')
   }
 ]
 

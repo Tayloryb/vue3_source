@@ -5,18 +5,18 @@ import Components from 'unplugin-vue-components/vite';
 import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers';
 
 // https://vitejs.dev/config/
-export default defineConfig(({mode}) => {
+export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, './env')
   return {
     base: env.VITE_DOMAIN,
     plugins: [vue(),
-      Components({
-        resolvers: [
-          AntDesignVueResolver({
-            importStyle: false, // css in js
-          }),
-        ],
-      })],
+    Components({
+      resolvers: [
+        AntDesignVueResolver({
+          importStyle: false, // css in js
+        }),
+      ],
+    })],
     resolve: {
       alias: {
         '@': resolve(__dirname, './src'),
@@ -29,9 +29,9 @@ export default defineConfig(({mode}) => {
     css: {
       preprocessorOptions: {
         less: {
-          // modifyVars: {
-          //   hack: `true; @import (reference) "${resolve('src/assets/style/main.less')}";`,
-          // },
+          modifyVars: {
+            hack: `true; @import (reference) "${resolve('src/assets/css/index.less')}";`,
+          },
           javascriptEnabled: true,
         },
       },

@@ -58,6 +58,7 @@ watch(() => [props.current, pageRef.value], () => {
       </defs>
       <rect x="0" y="0" width="100%" height="100%" fill="rgba(0, 0, 0, 0.7)" mask="url(#tutorialMask)"/>
     </svg>
+    <slot v-bind="{ position: currentAreaRef }"></slot>
   </div>
 </template>
 

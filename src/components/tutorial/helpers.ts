@@ -12,8 +12,16 @@ export const useTutorial = (tutorials?: Tutorial[]) => {
     return tutorialsRef.value[indexRef.value]
   })
 
+  const prev = () => {
+    indexRef.value--
+  }
+
   const next = () => {
     indexRef.value++
+  }
+
+  const hasPrev = () => {
+    return indexRef.value > 0
   }
 
   const hasNext = () => {
@@ -49,6 +57,8 @@ export const useTutorial = (tutorials?: Tutorial[]) => {
     finished,
     current: currentTutorial,
     disabled,
+    prev,
+    hasPrev,
     next,
     hasNext,
     getTutorial,

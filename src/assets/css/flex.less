@@ -73,3 +73,11 @@
 .column-reverse {
   flex-direction: column-reverse;
 }
+
+// flex函数加上justify-content和align-items的参数
+.flexbox(@justify: center, @align: center, @direction: row) {
+  display: flex;
+  justify-content: @justify;
+  align-items: @align;
+  flex-direction: @direction;
+}
