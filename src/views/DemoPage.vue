@@ -19,8 +19,6 @@ const handleTest = () => {
   index.value = inputeNumber.value
 }
 
-
-
 </script>
 
 <template>
@@ -34,7 +32,6 @@ const handleTest = () => {
       <div class="content flex justify-center">
         <Carousel :visible="visible" :data="data" v-model:index="index" class="test-item"></Carousel>
       </div>
-      
     </div>
   </div>
 </template>

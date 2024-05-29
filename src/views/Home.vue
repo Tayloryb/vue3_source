@@ -1,21 +1,23 @@
 <template>
   <div class="container">
-    <div
-      class="drag-box"
-      draggable="true"
-      @dragstart="handleDragStart"
-      @dragend="handleDragEnd"
-    >
-      <img :src="imgInfo" alt="Draggable Image" />
-    </div>
-    <div class="drop-area" @dragover.prevent="handleDragOver" @drop="handleDrop">
-      Drop here
+    <div>
+      <div
+        class="drag-box"
+        draggable="true"
+        @dragstart="handleDragStart"
+        @dragend="handleDragEnd"
+      >
+        <img :src="imgInfo" alt="Draggable Image" />
+      </div>
+      <div class="drop-area" @dragover.prevent="handleDragOver" @drop="handleDrop">
+        Drop here
+      </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { ref, defineComponent } from 'vue';
 import imgInfo from '@a/imgs/right_distinct.png'
 
 export default defineComponent({
@@ -45,7 +47,19 @@ export default defineComponent({
       // 拖拽结束后的处理逻辑，例如清理、重置状态等
     };
 
-    return { handleDragStart, handleDragOver, handleDrop, handleDragEnd, imgInfo };
+    const tags = ref([ { "tag": "--v 6", "isShow": false }, { "tag": "--stylize 100", "isShow": false }, { "tag": "--seed 7048517867", "isShow": false } ])
+
+    const handleClickTag = (tag: any, event: PointerEvent) => {
+      console.log('tag :>> ', tag, event);
+      tag.isShow = !tag.isShow
+    }
+    const autoClose = (tag: any) => {
+      setTimeout(() => {
+        tag.isShow = false
+      }, 1000);
+    }
+
+    return { handleDragStart, handleDragOver, handleDrop, handleDragEnd, imgInfo, tags, handleClickTag, autoClose };
   },
 });
 </script>
