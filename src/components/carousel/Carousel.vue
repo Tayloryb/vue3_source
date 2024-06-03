@@ -148,8 +148,8 @@ watch(() => props.visible, () => {
             {{ item.index }} {{ index }}
           </div>
         </div>
-      </div>
-    <!-- </div> -->
+      <!-- </div> -->
+    </div>
   </div>
 </template>
 

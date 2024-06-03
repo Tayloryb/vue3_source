@@ -10,6 +10,7 @@ declare module 'vue' {
     AButton: typeof import('ant-design-vue/es')['Button']
     AInput: typeof import('ant-design-vue/es')['Input']
     AInputNumber: typeof import('ant-design-vue/es')['InputNumber']
+    APopover: typeof import('ant-design-vue/es')['Popover']
     ATooltip: typeof import('ant-design-vue/es')['Tooltip']
     Carousel: typeof import('./src/components/carousel/Carousel.vue')['default']
     copy: typeof import('./src/components/tutorial/Tutorial copy.vue')['default']
