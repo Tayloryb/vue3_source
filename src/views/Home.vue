@@ -13,12 +13,28 @@
         Drop here
       </div>
     </div>
+    <div>
+      <a-button @click="handleAddItem">add item</a-button>
+      <a-button @click="pause">pause</a-button>
+      <a-button @click="start">start</a-button>
+    </div>
+
   </div>
 </template>
 
 <script lang="ts">
 import { ref, defineComponent } from 'vue';
+import { useListLoop } from '@/hooks/useListLoop';
 import imgInfo from '@a/imgs/right_distinct.png'
+
+const testGetData = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('testGetData')
+    }, 3000);
+  })
+
+}
 
 export default defineComponent({
   setup() {
@@ -59,7 +75,27 @@ export default defineComponent({
       }, 1000);
     }
 
-    return { handleDragStart, handleDragOver, handleDrop, handleDragEnd, imgInfo, tags, handleClickTag, autoClose };
+    const { list, addItem, removeItem, pause, start }  = useListLoop<number>(async() => {
+      await testGetData()
+      console.log('list.value :>> ', list.value, 'this is handler');
+      const temp: number[] = []
+        for (let i = 0; i < list.value.length; i++) {
+          if (Math.random() > 0.5) {
+            temp.push(i)
+            removeItem(i)
+            i--
+          }
+        }
+    }, {
+      timeout: 5000
+    })
+
+    const handleAddItem = () => {
+      const num = Math.floor(Math.random() * 100)
+      addItem(num)
+    }
+
+    return { handleDragStart, handleDragOver, handleDrop, handleDragEnd, imgInfo, tags, handleClickTag, autoClose, handleAddItem, pause, start };
   },
 });
 </script>

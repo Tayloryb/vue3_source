@@ -1,0 +1,6 @@
+const result = { "final_output": "J2 Semi\u306e\u672c\u793e\u306f\u4e0a\u6d77\u306b\u3042\u308a\u307e\u3059\u3002\n\n- J2 Semi is headquartered in Shanghai, China. The company was founded in 2021 and focuses on semiconductor technology, including the development of silicon carbide (SiC) chips and automotive ethernet chips.\n(Source: sharepoint - ref: J Cube Semiconductor (Hong Kong) Limited - \u6770\u5e73\u65b9\u534a\u5bfc\u4f53(\u4e0a\u6d77)\u6709\u9650\u516c\u53f8 - \u6770\u5e73\u65b9\u534a\u5bfc\u4f53(\u4e0a\u6d77)\u6709\u9650\u516c\u53f8 - J2 - J2 semi.pptx - https://itappssupporthkstp.sharepoint.com/sites/Constellation-UAT/_layouts/15/Doc.aspx?sourcedoc=%7B657AFC98-7377-4D67-9C1D-B798B46A3B70%7D&file=J2%20semi.pptx&action=edit&mobileredirect=true)\n\n- J2 Semiconductor is based in Shanghai, China, and specializes in semiconductor technology. The company has conducted a comparison of investment profits and losses between domestic and overseas markets.\n(Source: emailmsg_attachment - ref: [Sample email] Request for Account Manager's Review: Potential Company Information. (For Internal use only)_\u5883\u5185\u5916\u6295\u8d44\u635f\u76ca\u6bd4\u8f83pdf.pdf)\n\nFor more detailed information, you can visit the website and documents listed." }
+
+const str = JSON.stringify(result, null, 2);
+
+
+console.log(str)

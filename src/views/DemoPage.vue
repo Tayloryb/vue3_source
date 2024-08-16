@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import CustomVideo from '@/components/video/CustomVideo.vue';
 
 const visible = ref<boolean>(true)
 
@@ -32,6 +33,9 @@ const handleTest = () => {
       <div class="content flex justify-center">
         <Carousel :visible="visible" :data="data" v-model:index="index" class="test-item"></Carousel>
       </div>
+    </div>
+    <div class="demo-item">
+      <CustomVideo></CustomVideo>
     </div>
   </div>
 </template>

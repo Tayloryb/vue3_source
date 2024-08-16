@@ -7,6 +7,11 @@ const routes = [
     component: () => import('@/views/Home.vue')
   },
   {
+    path: '/demo',
+    name: 'Demo',
+    component: () => import('@/views/DemoPage.vue')
+  },
+  {
     path: '/swiper',
     name: 'Swiper',
     component: () => import('@/views/Swiper.vue')
@@ -38,6 +43,14 @@ const routes = [
     path: '/test',
     name: 'Test',
     component: () => import('@/views/Test.vue')
+  }, {
+    path: '/component',
+    name: 'Component',
+    component: () => import('@/views/Component.vue')
+  }, {
+    path: '/timer',
+    name: 'Timer',
+    component: () => import('@/views/Timer.vue')
   }
 ]
 
