@@ -4,7 +4,7 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: () => import('@/views/Home.vue')
+    component: () => import('@/layout/CommonLayout.vue')
   },
   {
     path: '/demo',
@@ -51,6 +51,10 @@ const routes = [
     path: '/timer',
     name: 'Timer',
     component: () => import('@/views/Timer.vue')
+  }, {
+    path: '/layout',
+    name: 'Layout',
+    component: () => import('@/layout/CommonLayout.vue')
   }
 ]
 

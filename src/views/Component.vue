@@ -1,5 +1,7 @@
 <script setup lang="ts">
+// import { Popover } from 'ant-design-vue';
 import EditInput from '@/components/input/ClickEditInput.vue'
+import Popover from '@/components/tips/Popover.vue';
 import { ref } from 'vue'
 const inputVal = ref<string>('')
 
@@ -15,6 +17,25 @@ const handleChange = () => {
       <div class="header">输入框静态、动态</div>
       <div class="component-wrapper">
         <edit-input v-model:value="inputVal" default-val="test" @change="handleChange"/>
+      </div>
+    </div>
+    <div class="section">
+      <a-row>
+        <!-- <a-col :xxl=""></a-col> -->
+      </a-row>
+    </div>
+    <div class="section">
+      <div class="header">弹出框</div>
+      <div class="component-wrapper flex justify-center">
+        <Popover trigger="click">
+          <!-- 触发 Popover 的元素 -->
+          <button>点击显示 Popover</button>
+
+          <!-- Popover 的内容 -->
+          <template #content>
+            <div>这是 Popover 的内容</div>
+          </template>
+        </Popover>
       </div>
     </div>
   </div>
