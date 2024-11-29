@@ -55,6 +55,31 @@ const routes = [
     path: '/layout',
     name: 'Layout',
     component: () => import('@/layout/CommonLayout.vue')
+  }, {
+    path: '/JX3',
+    name: 'JX3',
+    component: () => import('@/layout/JX3Layout.vue'),
+    redirect: '/JX3/manufacture',
+    children: [
+      {
+        path: 'manufacture',
+        name: 'Manufacture',
+        redirect: '/JX3/manufacture/list',
+        component: () => import('@/views/JX3/manufacture/index.vue'),
+        children: [
+          {
+            path: 'list',
+            name: 'ManufactureList',
+            component: () => import('@/views/JX3/manufacture/ManufactureList.vue')
+          },
+          {
+            path: 'favorite',
+            name: 'FavoriteManufacture',
+            component: () => import('@/views/JX3/manufacture/FavoriteManufacture.vue')
+          }
+        ]
+      }
+    ]
   }
 ]
 

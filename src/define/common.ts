@@ -17,3 +17,10 @@ export type JSErrorInfo = ErrorInfo & {
 export type PromiseRejectionInfo = ErrorInfo & {
   type: 'promise_rejection'
 }
+
+export type OptionsItem<T> = {
+  [k in keyof T]: T[k]
+} & {
+  id: string
+  label: string
+}

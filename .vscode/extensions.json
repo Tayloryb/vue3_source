@@ -1,6 +1,5 @@
 {
   "recommendations": [
-    "vue.volar",
     "Vue.vscode-typescript-vue-plugin"
   ]
 }

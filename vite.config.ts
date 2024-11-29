@@ -39,6 +39,16 @@ export default defineConfig(({ mode }) => {
     build: {
       outDir: './dist',
       assetsDir: './assets'
-    }
+    },
+    // server: {
+    //   port: 3000,
+    //   proxy: {
+    //     'price/api/': {
+    //       changeOrigin: true,
+    //       target: 'https://next2.jx3box.com',
+    //       rewrite: (path) => path.replace(/^\/price\/api\//, '/api/'),
+    //     }
+    //   }
+    // }
   }
 })
